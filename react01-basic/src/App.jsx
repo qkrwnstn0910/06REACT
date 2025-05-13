@@ -26,7 +26,7 @@ function FrontComp(props) {
      */
   }
   return(<>
-  <li>프론트엔드-{props-aTemp}</li>
+  <li>프론트엔드-{props.aTemp}</li>
   <ul>
     {liRows}
   </ul>
