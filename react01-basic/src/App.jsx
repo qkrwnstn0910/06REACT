@@ -12,30 +12,43 @@ props(프롭스)
  */
 function FrontComp(props) {
   const liRows = [];
+  //전달받은 값은 배열이므로 반복문을 통해 반복할 수 있다.
 
   for(let i=0; i<props.propData1.length; i++) {
+    /** 반복하면서 빈 배열에 <li> 태그를 순차적으로 추가한다. push()함수는
+        배열의 끝에 요소를 추가하는 기능을 가지고있다.
+     */
     liRows.push(
       <li key={i}>{props.propData1[i]}</li>
     );
+    /** 앞에서 li태그가 추가된 배열 변수를 ui에 삽입한다. 이 부분에 있는 내용이
+        화면에 랜더링된다.
+     */
   }
   return(<>
-  <li>프론트엔드</li>
+  <li>프론트엔드-{props-aTemp}</li>
   <ul>
     {liRows}
   </ul>
   </>)
   }
-  const BackComp = ({propData2}) => {
+  /** 전달되는 인수를 매개변수에서 바로 구조분해하여 필요한 프롭스만 직접 
+      추출하는 방식을 사용하낟. 프롭스명을 자식 컴포넌트에서 그대로 사용할 
+      수 있다.
+      단 전달되는 갯수만큼 매개변수를 추가해야한다.
+   */
+  const BackComp = ({propData2, bTemp}) => {
     const liRows = [];
 
     let keyCnt=0;
+    //for~of문을 이용해서 배열변수에 <li>태그를 추가한다.
     for(let row of propData2) {
       liRows.push(
         <li key={keyCnt++}>{row}</li> 
       );
     }
     return(<>
-  <li>백엔드</li>
+  <li>백엔드-{bTemp}</li>
   <ul>
     {liRows}
   </ul>
@@ -53,8 +66,8 @@ function App() {
         {/** 배열 데이터를 자식 컴포넌트로 props를 통해 전달한다. 프롭스는
          HTML의 속성을 명시하듯 기술하면 된다.
          */}
-        <FrontComp propData1={frontData}></FrontComp>
-        <BackComp propData2={backData}/>
+        <FrontComp propData1={frontData} aTemp={100}></FrontComp>
+        <BackComp propData2={backData} bTemp={100}/>
       </ol>
     </div>
   );
