@@ -20,31 +20,10 @@ function ArticleView(props) {
             <th>날짜</th> 
             <td>{props.selectRow.date}</td>
           </tr>
-          {/* <tr>
+          <tr>
             <th>내용</th> 
             <td>{props.selectRow.contents}</td>   
-          </tr> */}
-          <tr>
-            <th>내용1</th>  
-            {/*js의 고차함수인 map()을 이용해서 줄바꿈이 된 횟수만큼 반복해서 (br)태그
-            로 변경한다.*/ }
-            <td>{
-            props.selectRow.contents.split('\n').map((currVal) => {
-              console.log(currVal);
-              return(<>
-              {currVal}<br key={Math.random()}></br>
-              </>);
-            })
-            }</td>
           </tr>
-          <tr>
-            <th>내용2</th>
-            <td style={{"whiteSpace" : 'pre-wrap'}}>
-              {props.selectRow.contents} 
-            </td>
-          </tr>
-          <tr>내용3</tr>
-            <td className="contWrap">{props.selectRow.contents}</td>
         </tbody>
       </table>
     </article>

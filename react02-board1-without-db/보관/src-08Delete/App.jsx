@@ -3,12 +3,9 @@ import { useState } from "react";
 import NavList from "./components/navigation/NavList";
 import NavView from "./components/navigation/NavView";
 import NavWrite from "./components/navigation/NavWrite";
-import NavEdit from "./components/navigation/NavEdit";
 import ArticleList from "./components/article/ArticleList";
 import ArticleView from "./components/article/ArticleView";
 import ArticleWrite from "./components/article/ArticleWrite";
-import ArticleEdit from "./components/article/ArticleEdit";
-
 
 function ReadyComp() {
   return (
@@ -146,42 +143,6 @@ function App() {
     // setBoardData(boardData);
 
     setMode('list');
-  }
-  else if(mode==='edit'){
-    titleVar = '게시판 수정(props)';
-
-    navComp= <NavEdit
-    onChangeMode={() => {
-      setMode('list');
-    }}
-    onBack={() => {
-      setMode('view');
-      setNo(no);
-    }
-    }
-  ></NavEdit>
-
-  for(let i=0; i<boardData.length; i++) {
-    if(no===boardData[i].no ){
-      selectRow= boardData[i];
-    }
-  }
-  articleComp = <ArticleEdit selectRow={selectRow}
-    editAction={(t,w,c) => {
-      let editBoardData = {no:no, title:t, writer:w, contents:c, date:selectRow.date};
-      console.log('수정내용',editBoardData);
-
-      let copyBoardData = [...boardData];
-      for(let i=0; i<copyBoardData.length; i++) {
-        if(copyBoardData[i].no===no) {
-          copyBoardData[i] = editBoardData;
-          break;
-        }
-      }
-      setBoardData(copyBoardData) ;
-      setMode('view') ;
-    } }
-  />;
   }
   else {
     navComp =<ReadyComp></ReadyComp>;

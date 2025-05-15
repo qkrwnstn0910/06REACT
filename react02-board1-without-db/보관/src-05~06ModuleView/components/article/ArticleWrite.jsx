@@ -1,17 +1,7 @@
 function ArticleWrite(props) {
   return (
     <article>
-      <form onSubmit={(e)=>{
-        //제출되는것을 차단
-        e.preventDefault();
-
-        //이벤트 객체의 target속성으로 form하위 태그에 접근하여 value를 읽어온다
-        let title = e.target.title.value;
-        let writer = e.target.writer.value;
-        let contents = e.target.contents.value;
-
-        props.writeAction(title,writer,contents);
-      }}>
+      <form>
         <table id="boardTable">
           <tbody>
             <tr>

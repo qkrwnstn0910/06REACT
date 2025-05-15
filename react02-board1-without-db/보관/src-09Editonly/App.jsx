@@ -166,22 +166,7 @@ function App() {
       selectRow= boardData[i];
     }
   }
-  articleComp = <ArticleEdit selectRow={selectRow}
-    editAction={(t,w,c) => {
-      let editBoardData = {no:no, title:t, writer:w, contents:c, date:selectRow.date};
-      console.log('수정내용',editBoardData);
-
-      let copyBoardData = [...boardData];
-      for(let i=0; i<copyBoardData.length; i++) {
-        if(copyBoardData[i].no===no) {
-          copyBoardData[i] = editBoardData;
-          break;
-        }
-      }
-      setBoardData(copyBoardData) ;
-      setMode('view') ;
-    } }
-  />;
+  articleComp = <ArticleEdit selectRow={selectRow}></ArticleEdit>
   }
   else {
     navComp =<ReadyComp></ReadyComp>;
