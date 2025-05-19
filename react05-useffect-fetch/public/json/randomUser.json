@@ -1,0 +1,66 @@
+{
+  "results": [
+    {
+      "gender": "male",
+      "name": {
+        "title": "Mr",
+        "first": "Marius",
+        "last": "Andersen"
+      },
+      "location": {
+        "street": {
+          "number": 4082,
+          "name": "Havrevænget"
+        },
+        "city": "Randers Nv",
+        "state": "Nordjylland",
+        "country": "Denmark",
+        "postcode": 90681,
+        "coordinates": {
+          "latitude": "-45.3236",
+          "longitude": "-114.8163"
+        },
+        "timezone": {
+          "offset": "-1:00",
+          "description": "Azores, Cape Verde Islands"
+        }
+      },
+      "email": "marius.andersen@example.com",
+      "login": {
+        "uuid": "90664aae-f921-4500-b945-26d746305350",
+        "username": "goldenfrog262",
+        "password": "maria",
+        "salt": "7JhgwadR",
+        "md5": "0e2f950543c2aca2dace9726272ffcd0",
+        "sha1": "6f5c8f02e951a0bd55231196b567464fc977aaa6",
+        "sha256": "d6f647d223bc895fd7610e72ca2eb280d6397465f2f14ba50e023d558897f9e3"
+      },
+      "dob": {
+        "date": "1965-12-19T21:45:09.753Z",
+        "age": 59
+      },
+      "registered": {
+        "date": "2019-04-27T11:05:04.745Z",
+        "age": 6
+      },
+      "phone": "33203230",
+      "cell": "60022035",
+      "id": {
+        "name": "CPR",
+        "value": "191265-5237"
+      },
+      "picture": {
+        "large": "https://randomuser.me/api/portraits/men/49.jpg",
+        "medium": "https://randomuser.me/api/portraits/med/men/49.jpg",
+        "thumbnail": "https://randomuser.me/api/portraits/thumb/men/49.jpg"
+      },
+      "nat": "DK"
+    }
+  ],
+  "info": {
+    "seed": "92ff6eb4eb7f8da9",
+    "results": 1,
+    "page": 1,
+    "version": "1.4"
+  }
+}
