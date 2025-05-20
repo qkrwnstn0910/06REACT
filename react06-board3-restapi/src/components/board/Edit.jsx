@@ -25,7 +25,7 @@ function Edit(props) {
       console.log(json);
       setWriter(json.name);
       setTitle(json.subject);
-      seyContents(json.content);
+      setContents(json.content);
     });
     return ()=>{
       console.log('useEffect실행 ==>컴포넌트 언마운트');
@@ -62,6 +62,7 @@ function Edit(props) {
             subject: t,
             content: c,
             apikey: '91625e69b8523cb534dabbfeae6a6d4d',
+            api : i,
           }),
         })
         .then((Response) => Response.json())
